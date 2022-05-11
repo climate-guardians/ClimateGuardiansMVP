@@ -102,3 +102,10 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Environment variables file
+.env
+
+# Smart contract artifacts & cache
+artifacts
+cache
