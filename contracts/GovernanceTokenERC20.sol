@@ -16,7 +16,7 @@ contract MyToken is ERC20, ERC20Burnable, ERC20Snapshot, Ownable, ERC20Permit, E
         _snapshot();
     }
 
-    function mint(address to, uint256 amount) public onlyOwner {
+    function mint(address to, uint256 amount) public {
         _mint(to, amount);
     }
 

@@ -10,11 +10,12 @@ require('dotenv').config({path: '../.env'});
     const provider = new CeloProvider("https://alfajores-forno.celo-testnet.org");
     await provider.ready;
 
+    const deployer = new CeloWallet(String(process.env.PRIVATE_KEY_DEPLOYER), provider);
   const proposer = new CeloWallet(String(process.env.PRIVATE_KEY_PROPOSER), provider);
   const mintAmount = ethers.utils.parseEther("1"); 
 
   
-  const erc20GovToken = new ethers.Contract(contracts.governanceTokenERC20, ERC20Artifact.abi, proposer);
+  const erc20GovToken = new ethers.Contract(contracts.governanceTokenERC20, ERC20Artifact.abi, deployer);
   const transferCalldata = erc20GovToken.interface.encodeFunctionData("mint", [proposer.address, mintAmount]);
 
 

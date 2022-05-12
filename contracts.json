@@ -1,5 +1,5 @@
 {
-    "TimelockController": "0x6c06f92A94c30F7017A9501Cb8a00abF48a6539a",
-    "governanceTokenERC20": "0x40BDc53D767bEccf0E6874dA75C6f6cC2e4f12e8",
-    "myGovernor": "0xCc9e2BC1D4582c1EE49446B1534b4Cb704A0Fc89"
+    "TimelockController": "0x773688a45b70cAe0A825f0DfC0B7bA6CFDa0f511",
+    "governanceTokenERC20": "0x7FD4777F71782c8B520439b9Daf5A6E829b5D8c3",
+    "myGovernor": "0x211dC41eD01F18C7b9eDe5022e83a191C5ec329f"
 }
