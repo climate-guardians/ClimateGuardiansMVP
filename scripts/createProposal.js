@@ -15,15 +15,15 @@ require('dotenv').config({path: '../.env'});
 
   
   const erc20GovToken = new ethers.Contract(contracts.governanceTokenERC20, ERC20Artifact.abi, proposer);
-  const transferCalldata = erc20GovToken.interface.encodeFunctionData(´_mint´, [proposer.address, mintAmount]);
+  const transferCalldata = erc20GovToken.interface.encodeFunctionData("mint", [proposer.address, mintAmount]);
 
 
   const governor = new ethers.Contract(contracts.myGovernor, myGovernorArtifact.abi, proposer);
   await governor.propose(
-      [],
+      [contracts.governanceTokenERC20],
       [0],
       [transferCalldata],
-      "Proposal #1: Mint 1 token to deployer",
+      "Proposal #1: Mint 1 token to proposer",
   );
 
 })().catch((error) => {
