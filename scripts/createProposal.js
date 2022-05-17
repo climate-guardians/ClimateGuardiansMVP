@@ -11,21 +11,21 @@ require('dotenv').config({path: '../.env'});
     await provider.ready;
 
     const deployer = new CeloWallet(String(process.env.PRIVATE_KEY_DEPLOYER), provider);
-  const proposer = new CeloWallet(String(process.env.PRIVATE_KEY_PROPOSER), provider);
-  const mintAmount = ethers.utils.parseEther("1"); 
+    const proposer = new CeloWallet(String(process.env.PRIVATE_KEY_PROPOSER), provider);
+    const mintAmount = ethers.utils.parseEther("1"); 
 
   
-  const erc20GovToken = new ethers.Contract(contracts.governanceTokenERC20, ERC20Artifact.abi, deployer);
-  const transferCalldata = erc20GovToken.interface.encodeFunctionData("mint", [proposer.address, mintAmount]);
+    const erc20GovToken = new ethers.Contract(contracts.governanceTokenERC20, ERC20Artifact.abi, deployer);
+    const transferCalldata = erc20GovToken.interface.encodeFunctionData("mint", [proposer.address, mintAmount]);
 
 
-  const governor = new ethers.Contract(contracts.myGovernor, myGovernorArtifact.abi, proposer);
-  await governor.propose(
-      [contracts.governanceTokenERC20],
-      [0],
-      [transferCalldata],
-      "Proposal #1: Mint 1 token to proposer",
-  );
+    const governor = new ethers.Contract(contracts.myGovernor, myGovernorArtifact.abi, proposer);
+    await governor.propose(
+        [contracts.governanceTokenERC20],
+        [0],
+        [transferCalldata],
+        "Proposal #1: Mint 1 token to proposer",
+    );
 
 })().catch((error) => {
     console.error(error);
