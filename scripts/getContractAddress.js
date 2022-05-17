@@ -1,10 +1,9 @@
-const { CeloProvider } = require("@celo-tools/celo-ethers-wrapper");
+const { StaticCeloProvider } = require("@celo-tools/celo-ethers-wrapper");
 const { ethers } = require("ethers");
 require('dotenv').config({path: '../.env'});
 
-
-const getContractAddresses = async function getContractAddresses (address){
-    const provider = new CeloProvider("https://alfajores-forno.celo-testnet.org");
+async function getContractAddresses (address){
+    const provider = new StaticCeloProvider(process.env.ALFAJORES_API);
     await provider.ready;
     const sender = String(address);
     var nonce = await provider.getTransactionCount(sender);
