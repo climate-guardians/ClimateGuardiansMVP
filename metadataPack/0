@@ -1,0 +1,15 @@
+{
+    "description": "Pack of 3",
+    "image": "https://gateway.pinata.cloud/ipfs/QmRUevd7aNFPy8LjcNEB1dXn7NY9LMHHsCpZ5H5awWtQo3/CG.png",
+    "name": "Climate Guardians PACK",
+    "attributes": [
+        {
+            "trait_type": "Base", 
+            "value": "Pack"
+        },
+        {
+            "trait_type": "Edition", 
+            "value": "0"
+        }
+    ] 
+}

@@ -1,0 +1,36 @@
+{
+    "description": "Protector of the insect tribe", 
+    "animation_url": "https://gateway.pinata.cloud/ipfs/QmWfgkX1ZZ9fUumfmxuu3QQ25PbxFrv4pupfGnYGpEsQt4/insect_model.glb",
+    "image": "https://gateway.pinata.cloud/ipfs/QmRUevd7aNFPy8LjcNEB1dXn7NY9LMHHsCpZ5H5awWtQo3/Insect.png",
+    "name": "Insectoid",
+    "attributes": [
+        {
+            "trait_type": "Base", 
+            "value": "Insect"
+        },
+        {
+            "trait_type": "Personality", 
+            "value": "Hardworking"
+        },
+        {
+            "display_type": "boost_number",
+            "trait_type": "strength", 
+            "value": 100
+        },
+        {
+            "display_type": "boost_number",
+            "trait_type": "intelligence", 
+            "value": 10
+        },
+        {
+            "display_type": "boost_number",
+            "trait_type": "agility", 
+            "value": 90
+        },
+        {
+            "display_type": "boost_number",
+            "trait_type": "rarity", 
+            "value": "rare"
+        }
+    ] 
+}

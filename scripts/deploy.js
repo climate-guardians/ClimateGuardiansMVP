@@ -1,6 +1,6 @@
 const { CeloProvider, CeloWallet } = require("@celo-tools/celo-ethers-wrapper");
 const { ethers } = require("ethers");
-const { getContractAddresses } = require('./getContractAddress');
+const { getContractAddress } = require('./getContractAddress');
 const timelockArtifact = require("../artifacts/@openzeppelin/contracts/governance/TimeLockController.sol/TimeLockController.json");
 const governanceTokenArtifact = require("../artifacts/contracts/GovernanceTokenERC20.sol/MyToken.json");
 const myGovernorArtifact = require("../artifacts/contracts/MyGovernor.sol/MyGovernor.json");
@@ -24,20 +24,20 @@ async function main() {
   const executers = [executer.address];
   console.log(proposers);
 
-  console.log("predicted Timecontroller address: ", await getContractAddresses(deployer.address));
+  console.log("predicted Timecontroller address: ", await getContractAddress(deployer.address));
   await getContractAddresses(deployer.address);
   const TimelockController = new ethers.ContractFactory(timelockArtifact.abi, timelockArtifact.bytecode, deployer);
   console.log(executers);
   const timelockController = await TimelockController.deploy(minDelay, proposers, executers );
   await timelockController.deployed();
   console.log("TimelockController deployed to:", timelockController.address);
-  console.log("predicted governanceTokenERC20 address: ", await getContractAddresses(deployer.address));
+  console.log("predicted governanceTokenERC20 address: ", await getContractAddress(deployer.address));
   const GovernanceTokenERC20 = new ethers.ContractFactory(governanceTokenArtifact.abi, governanceTokenArtifact.bytecode, deployer);
   const governanceTokenERC20 = await GovernanceTokenERC20.deploy();
   await governanceTokenERC20.deployed();
 
   console.log("governanceTokenERC20 deployed to:", governanceTokenERC20.address);
-  console.log("predicted myGovernor address: ", await getContractAddresses(deployer.address));
+  console.log("predicted myGovernor address: ", await getContractAddress(deployer.address));
   const MyGovernor = new ethers.ContractFactory(myGovernorArtifact.abi, myGovernorArtifact.bytecode, deployer);
   const myGovernor = await MyGovernor.deploy(governanceTokenERC20.address, timelockController.address);
   await myGovernor.deployed();
