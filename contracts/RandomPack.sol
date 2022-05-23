@@ -11,6 +11,8 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+
 //abstract contract Combinator is ERC721, ERC721Burnable, Ownable, ERC721URIStorage {
 
     // function combinator (address insectContrAddress, address fungiContrAddress, address plantsContrAddress, address elementalContrAddress) public view returns(uint result){
@@ -203,7 +205,11 @@ contract Plants is ERC721, ERC721Burnable, Ownable, ERC721URIStorage {
     }
 }
 
-contract Pack is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
+contract Pack is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply, ReentrancyGuard {
+    using Counters for Counters.Counter;
+
+    Counters.Counter private _tokenIdCounter;
+
     uint256 public price = 100000000000000;
     address public fungiContrAddress;
     address public insectContrAddress;
@@ -218,19 +224,23 @@ contract Pack is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         plantsContrAddress = _plantsContrAddress;
     }
 
-    function mint( uint256 id, uint256 amount, bytes memory data)
+    function mint( uint256 amount, bytes memory data)
         public
         payable
+        nonReentrant
     {
         require(msg.value == price, "The amount of ether you want to send is incorrect!");
         require(amount == 1, "Only one NFT is allowed to be minted at a time!");
-        require( totalSupply(id) < 555, "Supply exceeded!");
-        _mint(_msgSender(), id, amount, data);
+        require( totalSupply(_tokenIdCounter.current()) < 555, "Supply exceeded!");
+        uint256 tokenId = _tokenIdCounter.current();
+        _tokenIdCounter.increment();
+        _mint(_msgSender(), tokenId, amount, data);
     }
 
 
     function openPack(uint256 id, uint256 amount) 
     public
+    nonReentrant
     {
         _burn(_msgSender(),id,amount);
         Fungi fungi = Fungi(fungiContrAddress);

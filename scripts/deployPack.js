@@ -1,5 +1,5 @@
 const { StaticCeloProvider, CeloWallet } = require("@celo-tools/celo-ethers-wrapper");
-const { ethers } = require("ethers");
+const { ethers, Wallet } = require("ethers");
 const fs = require('fs');
 const { getContractAddress } = require('./getContractAddress');
 // const elemental = require("../artifacts/contracts/RandomPack.sol/Elemental.json");
@@ -13,12 +13,17 @@ require('dotenv').config({path: '../.env'});
 
 async function main() {
   
-  const provider = new StaticCeloProvider("https://alfajores-forno.celo-testnet.org");
+  const provider = new StaticCeloProvider(process.env.ALFAJORES_API);
+  // const provider = new ethers.providers.InfuraProvider("rinkeby", process.env.INFURA_API_KEY);
   await provider.ready;
 
   const deployer = new CeloWallet(String(process.env.PRIVATE_KEY_DEPLOYER), provider);
   const proposer = new CeloWallet(String(process.env.PRIVATE_KEY_PROPOSER), provider);
   const executer = new CeloWallet(String(process.env.PRIVATE_KEY_EXECUTER), provider);
+
+  // const deployer = new Wallet(String(process.env.PRIVATE_KEY_DEPLOYER), provider);
+  // const proposer = new Wallet(String(process.env.PRIVATE_KEY_PROPOSER), provider);
+  // const executer = new Wallet(String(process.env.PRIVATE_KEY_EXECUTER), provider);
 
   console.log("deployer: ", deployer.address);
   console.log("proposer: ", proposer.address);
