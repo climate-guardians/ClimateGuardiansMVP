@@ -52,19 +52,38 @@ var range = function(start, end, step) {
 
 }
 
-async function getContractAddress (address, amount){
-    const nonceArray = [];
-    const provider = new StaticCeloProvider(process.env.ALFAJORES_API);
-    await provider.ready;
-    const sender = String(address);
-    const lowestNonce = await provider.getTransactionCount(sender);
-    const highestNonce = await provider.getTransactionCount(sender) + amount -1;
-    const nonces = range(lowestNonce, highestNonce, 1);
-    for (let nonce of nonces){
-        let contractAddress = ethers.utils.getContractAddress({from: address, nonce: ethers.BigNumber.from(nonce.toString()).toHexString()});
-        nonceArray.push(contractAddress);
+async function getContractAddress (address, amount, network){
+    if ( network === "rinkeby" ){
+        const provider = new ethers.providers.InfuraProvider("rinkeby", process.env.INFURA_API_KEY);
+        await provider.ready;
+
+        const nonceArray = [];
+        const sender = String(address);
+        const lowestNonce = await provider.getTransactionCount(sender);
+        const highestNonce = await provider.getTransactionCount(sender) + amount -1;
+        const nonces = range(lowestNonce, highestNonce, 1);
+        for (let nonce of nonces){
+            let contractAddress = ethers.utils.getContractAddress({from: address, nonce: ethers.BigNumber.from(nonce.toString()).toHexString()});
+            nonceArray.push(contractAddress);
+        }
+        return nonceArray;
+    } else if ( network === "alfajores" ){
+        const provider = new StaticCeloProvider(process.env.ALFAJORES_API);
+        await provider.ready;
+
+        const nonceArray = [];
+        const sender = String(address);
+        const lowestNonce = await provider.getTransactionCount(sender);
+        const highestNonce = await provider.getTransactionCount(sender) + amount -1;
+        const nonces = range(lowestNonce, highestNonce, 1);
+        for (let nonce of nonces){
+            let contractAddress = ethers.utils.getContractAddress({from: address, nonce: ethers.BigNumber.from(nonce.toString()).toHexString()});
+            nonceArray.push(contractAddress);
+        }
+        return nonceArray;
+    } else {
+        throw new Error("Invalid network");
     }
-    return nonceArray;
 }
 
 module.exports = {getContractAddress};

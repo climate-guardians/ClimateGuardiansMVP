@@ -8,7 +8,6 @@ const insect = require("../artifacts/contracts/RandomPack.sol/Insect.json");
 const plant = require("../artifacts/contracts/RandomPack.sol/Plants.json");
 const pack = require("../artifacts/contracts/RandomPack.sol/Pack.json");
 
-
 require('dotenv').config({path: '../.env'});
 
 async function main() {
@@ -46,7 +45,9 @@ async function main() {
 
   
 
-  const allAddresses = await getContractAddress(deployer.address, 4);
+  // const allAddresses = await getContractAddress(deployer.address, 4, "rinkeby");
+  const allAddresses = await getContractAddress(deployer.address, 4, "alfajores");
+  console.log("allAddresses: ", allAddresses);
 
   const packsContractAddress = allAddresses[0];
   const fungiContractAddress = allAddresses[1];

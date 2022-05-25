@@ -3,6 +3,7 @@
     "@celo-tools/celo-ethers-wrapper": "^0.1.1",
     "@celo/contractkit": "^2.0.0",
     "@openzeppelin/contracts": "^4.6.0",
+    "@pinata/sdk": "^1.1.25",
     "detect-file-encoding-and-language": "^2.1.0",
     "dotenv": "^16.0.1",
     "ethers": "^5.6.5",

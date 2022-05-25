@@ -12,9 +12,14 @@ async function main() {
 
     const contract = new ethers.Contract(allAddresses.packAddress, pack.abi, deployer);
     const gasPrice = await provider.getGasPrice();
-    txResponse = await contract.openPack(0, 1, {  from: deployer.address, gasLimit: "0x3D090", gasPrice: gasPrice});
-    txReceipt = await txResponse.wait();
-    console.log("Pack opened: ", txReceipt.transactionHash);
+    const tx = await contract.populateTransaction.openPack(0, 1, {  from: deployer.address, gasLimit: "0x3D090", gasPrice: gasPrice});
+    console.log("tx: ", tx);
+    console.log("tx.data: ", tx.data);
+    const signedTx = await deployer.signTransaction(tx);
+    console.log("signedTx: ", signedTx);
+
+    const result = await provider.sendTransaction(signedTx);
+    console.log(result);
 }
 
 main().catch((error) => {
