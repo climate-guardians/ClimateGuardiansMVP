@@ -7,7 +7,7 @@ const contracts = require('../contracts.json');
 require('dotenv').config({path: '../.env'});
 
 (async () =>{
-    const provider = new ethers.providers.InfuraProvider("rinkeby", "100339d2a5ce47dd854e9c4e483cf2a3");
+    const provider = new ethers.providers.InfuraProvider("rinkeby", process.env.INFURA_API_KEY);
     await provider.ready;
 
     const deployer = new Wallet(String(process.env.PRIVATE_KEY_DEPLOYER), provider);
