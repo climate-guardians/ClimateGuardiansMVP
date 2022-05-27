@@ -28,9 +28,12 @@ Celo is an open platform that makes financial tools accessible to anyone with a 
 2. We believe strongly in Celo’s mission of building an open financial system that brings borderless applications to anyone with a mobile phone. Read more about [Celo’s mission](https://celo.org/about).
 3. cLabs has an incredibly talented team that is engaged with Celo Camp and values the open-source developer community. The global Celo community have created a full stack platform that is mobile first, fully EVM compatible, has fractional gas fees and capable of Visa scale throughput.
 
-For Celo Camp the Climate Guardians team has worked hard to deliver a MVP with Celo integration. We are proud to announce that our MVP is now live on Celo's Alfajores Testnet
+For Celo Camp the Climate Guardians team has worked hard to deliver a MVP with Celo integration. We are proud to announce that our MVP is now live on Celo's Alfajores Testnet.
 
-## Let's get technical: Compile, deploy smart contracts
+## MVP Tech-stack
+We have been working hard on delivering our first MVP build in Unity. Player's are able to mint and open a Climate Guardians pack directly in the Unity MVP. We used the Chainsave SDK to connect the minting and open pack functions. The NFT metadata is uploaded to IPFS using Pinata pinning service. The Guardian NFT's connect both .img files (2D) and .glb files (3D) living on IPFS. The contracts live on Alfajores Testnet can be found in the contractAddresses.json file. We also started working on the Climate Guardians DAO contracts, which will be used to govern the in-game treasury. 
+
+## Let's get technical: Compile & deploy smart contracts
 
 First run
 
