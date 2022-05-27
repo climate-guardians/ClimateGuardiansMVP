@@ -1,5 +1,11 @@
 # Climate Guardians DAO
 
+<p align="center">
+  <a href="https://climateguardians.io/">
+    <img src="https://climateguardians.io/wp-content/uploads/2022/05/logoname-1.png" alt="climate guardians logo" title="Go to climateguardians.io" width="300" style="border:none;"/>
+  </a>
+</p>
+
 ![Climate Guardians Logo](/ClimateGuardiansDAO/assets/cg-logo.png?raw=true "cg-logo")
 
 ## What is the Climate Guardians DAO?
