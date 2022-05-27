@@ -21,7 +21,6 @@ Climate Guardians is a new type of strategy game that gives the player the possi
 Climate Guardians is proud to be part of Celo Camp's batch Five. Celo Camp is an eight-week virtual accelerator, designed by Upright in collaboration with cLabs, for startups building dApps on the Celo blockchain. Celo Camp brings together teams from around the world who are committed to build an open financial system that brings the conditions for prosperity to everyone. The camp is an independent initiative run by entrepreneurs passionate about the potential for global financial inclusion, mass adoption of digital money, and acceleration of startups that will build this vision. Visit [www.celocamp.com](http://www.celocamp.com/) for more information.
 
 ## Why Celo?
-
 Celo is an open platform that makes financial tools accessible to anyone with a mobile phone. Celo embraces a full-stack approach, reimagining technology at every layer. Celo’s innovations are designed along with communities around the world. These are the three main reasons Upright chose Celo:
 
 1. Celo is truly decentralized and open-source.
@@ -31,7 +30,7 @@ Celo is an open platform that makes financial tools accessible to anyone with a 
 For Celo Camp the Climate Guardians team has worked hard to deliver a MVP with Celo integration. We are proud to announce that our MVP is now live on Celo's Alfajores Testnet.
 
 ## MVP Tech-stack
-We have been working hard on delivering our first MVP build in Unity. Player's are able to mint and open a Climate Guardians pack directly in the Unity MVP. We used the Chainsave SDK to connect the minting and open pack functions. The NFT metadata is uploaded to IPFS using Pinata pinning service. The Guardian NFT's connect both .img files (2D) and .glb files (3D) living on IPFS. The contracts live on Alfajores Testnet can be found in the contractAddresses.json file. We also started working on the Climate Guardians DAO contracts, which will be used to govern the in-game treasury. 
+We have been working hard on delivering our first MVP build in Unity. Player's are able to mint and open a Climate Guardians pack directly in the Unity MVP. We used the Chainsave SDK to connect the minting and open pack functions. The NFT metadata is uploaded to IPFS using Pinata pinning service. The Guardian NFT's connect both .img files (2D) and .glb files (3D) living on IPFS. The contracts are live on Alfajores Testnet and the addresses can be found in the contractAddresses.json file. We also started working on the Climate Guardians DAO contracts, which will be used in the future to govern the in-game treasury.
 
 ## Let's get technical: Compile & deploy smart contracts
 
