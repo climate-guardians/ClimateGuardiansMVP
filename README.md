@@ -11,7 +11,7 @@ The Climate Guardians DAO is a decentralized organization that is working to pro
 
 Climate Guardians is currently developing the First “Play To Preserve” Mobile Strategy Game Where Players Team Up To Fight Deforestation - While Making A Real-World Impact! 
 
-## The big  idea in 169 words
+## The big idea
 Climate Guardians - bringing crypto back to earth. Unless you just landed here from the Moon you already know of the massive change of consumer preferences for climate and environmentally friendly products. But there's one holdout area where it's just like it used to be, in past times, right? Game-developing still focuses on ego-shooters, football & racing games. Today, consumers have little possibility to play games that align with their purpose, apart from a few financed by educational organizations that look like they are straight out of the 80s, just without the fun factor. Meanwhile, ever since Metal Gear Solid broke the fourth wall back in 1998, games with a link to the real world have been getting more popular every year. But few genuine real world links have been created, because it is such a hard thing to do it.. Impact gaming has been a niche, where fractions of revenue was spent on ESG (environmental social governance)  purposes. That’s great for the environment, but does not hook the player to change the world.
 
 ## Game basics
