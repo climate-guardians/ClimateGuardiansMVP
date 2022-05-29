@@ -34,7 +34,7 @@ For Celo Camp the Climate Guardians team has worked hard to deliver a MVP with C
 https://user-images.githubusercontent.com/33607180/170816547-6d26e95e-e48d-4702-89ca-c9258b5cacf7.mp4
 
 ## MVP Tech-stack
-We have been working hard on delivering our first MVP build in Unity. For Celo Camp we defined the MVP scope as followed:
+We have been working hard on delivering our first MVP build in Unity. For Celo Camp we defined the following MVP scope:
 
 - Base Building with proper resource economy.
 - Crafting, training, and upgrading units.
