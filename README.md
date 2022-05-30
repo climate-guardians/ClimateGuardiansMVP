@@ -71,7 +71,7 @@ node scripts/mintPack.js
 
 to mint a pack. Then run 
 
-````
+```
 node scripts/openPack.js
 ```
 to open a pack and get three cards.
