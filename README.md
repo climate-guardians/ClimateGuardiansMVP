@@ -1,4 +1,4 @@
-# Climate Guardians DAO
+# Climate Guardians MVP
 
 <p align="center">
   <a href="https://climateguardians.io/">
@@ -6,7 +6,7 @@
   </a>
 </p>
 
-## What is the Climate Guardians DAO?
+## What is the Climate Guardians?
 The Climate Guardians DAO is a decentralized organization that is working to protect the environment and the people who live in it. It wants to achieve this by gamifying climate protection and by providing a platform for people to contribute to the cause. 
 
 Climate Guardians is currently developing the First “Play To Preserve” Mobile Strategy Game Where Players Team Up To Fight Deforestation - While Making A Real-World Impact! 
